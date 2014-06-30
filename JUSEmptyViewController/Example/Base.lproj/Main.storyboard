@@ -53,7 +53,7 @@
             </objects>
             <point key="canvasLocation" x="3042" y="729"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Table View Controller - Table View-->
         <scene sceneID="QCf-r8-Gob">
             <objects>
                 <tableViewController id="2Wr-Mx-Sbb" customClass="TableViewController" sceneMemberID="viewController">
@@ -87,7 +87,7 @@
                             <outlet property="delegate" destination="2Wr-Mx-Sbb" id="dbq-Po-UBS"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" systemItem="contacts" id="Mc1-Hf-Hkt"/>
+                    <tabBarItem key="tabBarItem" title="Table View" image="second" id="Mc1-Hf-Hkt"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btW-V4-nmA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -117,5 +117,6 @@
         <image name="emptyimage" width="512" height="512"/>
         <image name="emptyimage2" width="512" height="512"/>
         <image name="first" width="30" height="30"/>
+        <image name="second" width="30" height="30"/>
     </resources>
 </document>
