@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface TableViewController : UITableViewController
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end

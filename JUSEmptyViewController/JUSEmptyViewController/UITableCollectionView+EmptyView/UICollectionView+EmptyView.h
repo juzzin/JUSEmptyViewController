@@ -10,5 +10,8 @@
 #import <UIKit/UIKit.h>
 
 @interface UICollectionViewController (EmptyView)
+@property (nonatomic, strong) NSNumber *emptyViewState;
 - (void)configureEmptyViewController:(UIViewController *)emptyController;
+- (void)enableEmptyViewController;
+- (void)disableEmptyViewController;
 @end

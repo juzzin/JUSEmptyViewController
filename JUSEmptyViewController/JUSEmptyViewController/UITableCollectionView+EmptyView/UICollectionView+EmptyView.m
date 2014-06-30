@@ -8,8 +8,10 @@
 
 #import "UICollectionView+EmptyView.h"
 #import "UICollectionView+ReloadData.h"
+#import <objc/runtime.h>
 
 @implementation UICollectionViewController (EmptyView)
+@dynamic emptyViewState;
 
 - (void)configureEmptyViewController:(UIViewController *)emptyController
 {
@@ -37,7 +39,7 @@
         
         NSInteger count = [dataSource collectionView:self.collectionView numberOfItemsInSection:0];
         
-        if (count == 0) {
+        if (count == 0 && ![self.emptyViewState isEqual: @1]) {
             // Disable bouncing
 #warning This is a bug, since it overrides both settings.
             self.collectionView.alwaysBounceVertical = NO;
@@ -54,6 +56,28 @@
             [emptyController removeFromParentViewController];
         }
     }
+}
+
+#pragma mark - Enable/Disable
+
+- (void)enableEmptyViewController
+{
+    self.emptyViewState = nil;
+}
+
+- (void)disableEmptyViewController
+{
+    self.emptyViewState = @1;
+}
+
+#pragma mark - Properties
+
+- (void)setEmptyViewState:(NSNumber *)state {
+    objc_setAssociatedObject(self, @selector(emptyViewState), state, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (NSNumber *)emptyViewState {
+    return objc_getAssociatedObject(self, @selector(emptyViewState));
 }
 
 @end

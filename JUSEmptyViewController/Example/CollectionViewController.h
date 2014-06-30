@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface CollectionViewController : UICollectionViewController
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @end

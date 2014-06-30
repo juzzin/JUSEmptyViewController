@@ -8,8 +8,10 @@
 
 #import "UITableView+EmptyView.h"
 #import "UITableView+ReloadData.h"
+#import <objc/runtime.h>
 
 @implementation UITableViewController (EmptyView)
+@dynamic emptyViewState;
 
 - (void)configureEmptyViewController:(UIViewController *)emptyController
 {
@@ -37,7 +39,7 @@
         
         NSInteger count = [dataSource tableView:self.tableView numberOfRowsInSection:0];
         
-        if (count == 0) {   
+        if (count == 0 && ![self.emptyViewState isEqual: @1]) {
             // Disable bouncing
 #warning Potentially overrides default settings. Fix!
             self.tableView.alwaysBounceVertical = NO;
@@ -61,6 +63,28 @@
             [emptyController removeFromParentViewController];
         }
     }
+}
+
+#pragma mark - Enable/Disable
+
+- (void)enableEmptyViewController
+{
+    self.emptyViewState = nil;
+}
+
+- (void)disableEmptyViewController
+{
+    self.emptyViewState = @1;
+}
+
+#pragma mark - Properties
+
+- (void)setEmptyViewState:(NSNumber *)state {
+    objc_setAssociatedObject(self, @selector(emptyViewState), state, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (NSNumber *)emptyViewState {
+    return objc_getAssociatedObject(self, @selector(emptyViewState));
 }
 
 @end

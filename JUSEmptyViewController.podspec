@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name          = "JUSEmptyViewController"
-  s.version       = "0.9"
+  s.version       = "0.9.1"
   s.summary       = "A UITable/CollectionView category for displaying a view when the datasource is empty."
   s.homepage      = "https://github.com/juzzin/JUSEmptyViewController"
   s.license       = { :type => 'MIT', :file => 'LICENSE' }

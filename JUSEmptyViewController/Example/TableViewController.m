@@ -58,15 +58,26 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    // Simulate non-empty data source, but temporarily prohibit empty view display
+    [self.activityIndicator startAnimating];
+    [self disableEmptyViewController];
+    
     [self.items removeLastObject];
     [self.tableView reloadData];
+    
+    dispatch_time_t delay = dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC * 1.5);
+    dispatch_after(delay, dispatch_get_main_queue(), ^(void){
+        [self.activityIndicator stopAnimating];
+        [self enableEmptyViewController];
+        [tableView reloadData];
+    });
 }
 
 #pragma mark - JUSEmptyViewControllerDelegate
 
 - (void)emptyViewDidTapButton
 {
-    NSLog(@"Getting an octopus!");
+    NSLog(@"Getting an octopus!");    
     [self.items addObject:@"Octopus"];
     [self.tableView reloadData];
 }

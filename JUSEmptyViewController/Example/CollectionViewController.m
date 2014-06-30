@@ -59,8 +59,19 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    // Simulate non-empty data source, but temporarily prohibit empty view display
+    [self.activityIndicator startAnimating];
+    [self disableEmptyViewController];
+    
     [self.items removeLastObject];
     [collectionView reloadData];
+    
+    dispatch_time_t delay = dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC * 1.5);
+    dispatch_after(delay, dispatch_get_main_queue(), ^(void){
+        [self.activityIndicator stopAnimating];
+        [self enableEmptyViewController];
+        [collectionView reloadData];
+    });
 }
 
 #pragma mark - JUSEmptyViewControllerDelegate

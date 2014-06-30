@@ -19,6 +19,11 @@
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="20" minY="40" maxX="20" maxY="0.0"/>
                         </collectionViewFlowLayout>
+                        <activityIndicatorView key="backgroundView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" id="Cx2-yy-QFH">
+                            <rect key="frame" x="0.0" y="0.0" width="480" height="480"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="color" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                        </activityIndicatorView>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="fTA-Sn-BtV">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -48,6 +53,9 @@
                         </connections>
                     </collectionView>
                     <tabBarItem key="tabBarItem" title="Collection View" image="first" id="FBw-p3-LOT"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="Cx2-yy-QFH" id="3hZ-xA-DUS"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B9x-s1-1dD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -62,6 +70,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                        <activityIndicatorView key="tableFooterView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" id="7mr-ja-9Nv">
+                            <rect key="frame" x="0.0" y="122" width="480" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="color" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                        </activityIndicatorView>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" ambiguous="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="100" id="DtL-KP-C9i">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -88,6 +101,9 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Table View" image="second" id="Mc1-Hf-Hkt"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="7mr-ja-9Nv" id="ywD-oD-hGK"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="btW-V4-nmA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
