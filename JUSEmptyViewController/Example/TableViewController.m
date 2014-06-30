@@ -58,8 +58,16 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    // Create activity indicator and position hackishly
+    UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    activityIndicator.color = [UIColor colorWithRed:1.000 green:0.000 blue:0.502 alpha:1.000];
+    activityIndicator.hidesWhenStopped = YES;
+    activityIndicator.center = tableView.center;
+    [tableView addSubview:activityIndicator];
+    
     // Simulate non-empty data source, but temporarily prohibit empty view display
-    [self.activityIndicator startAnimating];
+    // Center activity indicator
+    [activityIndicator startAnimating];
     [self disableEmptyViewController];
     
     [self.items removeLastObject];
@@ -67,7 +75,8 @@
     
     dispatch_time_t delay = dispatch_time(DISPATCH_TIME_NOW, NSEC_PER_SEC * 1.5);
     dispatch_after(delay, dispatch_get_main_queue(), ^(void){
-        [self.activityIndicator stopAnimating];
+        [activityIndicator stopAnimating];
+        [activityIndicator removeFromSuperview];
         [self enableEmptyViewController];
         [tableView reloadData];
     });
