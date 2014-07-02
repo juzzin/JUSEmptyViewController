@@ -14,11 +14,16 @@
 @end
 
 @interface JUSDefaultEmptyViewController : UIViewController
+
 @property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSString *subtitle;
 @property (strong, nonatomic) NSString *actionButtonTitle;
-@property (strong, nonatomic) NSString *imageName;
-@property (strong, nonatomic) NSString *backgroundImageName;
+@property (strong, nonatomic) UIImage *image;
+
+@property (strong, nonatomic) UIColor *titleColor;
+@property (strong, nonatomic) UIColor *subtitleColor;
+@property (strong, nonatomic) UIColor *backgroundColor;
+
 @property (assign, nonatomic) BOOL enableMotionEffects;
 
 @property (nonatomic, assign) id <JUSDefaultEmptyViewController> delegate;

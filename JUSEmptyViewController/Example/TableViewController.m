@@ -30,7 +30,9 @@
     emptyViewController.title = @"You're out of octopuses!";
     emptyViewController.subtitle = @"When you follow some blogs, their latest octopuses will show up here!";
     emptyViewController.actionButtonTitle = @"Get an octopus";
-    emptyViewController.imageName = @"octopus";
+    emptyViewController.image = [UIImage imageNamed:@"octopus"];
+    emptyViewController.titleColor = [UIColor colorWithRed:0.264 green:0.412 blue:0.587 alpha:1.000];
+    emptyViewController.subtitleColor = [UIColor colorWithWhite:0.298 alpha:1.000];
     emptyViewController.delegate = self;
     
     // Configure empty view controller

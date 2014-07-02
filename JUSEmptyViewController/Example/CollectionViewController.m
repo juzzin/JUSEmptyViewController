@@ -30,8 +30,8 @@
     emptyViewController.title = @"You're out of monkeys.";
     emptyViewController.subtitle = @"When you follow some blogs, their latest monkeys will show up here!";
     emptyViewController.actionButtonTitle = @"Get a monkey";
-    emptyViewController.imageName = @"monkey";
-    emptyViewController.backgroundImageName = @"background";
+    emptyViewController.image = [UIImage imageNamed:@"monkey"];
+    emptyViewController.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"background"]];
     emptyViewController.enableMotionEffects = YES;
     emptyViewController.delegate = self;
     

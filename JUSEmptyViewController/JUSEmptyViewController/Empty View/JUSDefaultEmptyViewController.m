@@ -22,15 +22,23 @@
 
 @implementation JUSDefaultEmptyViewController
 
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+    if (self = [super initWithNibName:nibBundleOrNil bundle:nibBundleOrNil]) {
+        self.backgroundColor = [UIColor whiteColor];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     self.titleLabel.text = self.title;
     self.subtitleLabel.text = self.subtitle;
-    self.imageView.image = [UIImage imageNamed:self.imageName];
+    self.imageView.image = self.image;
     [self.actionButton setTitle:self.actionButtonTitle forState:UIControlStateNormal];
-    
-    //    // Background pattern image
-    UIImage *patternImage = [UIImage imageNamed:self.backgroundImageName];
-    self.backgroundImageView.backgroundColor = [UIColor colorWithPatternImage:patternImage];
+
+    // Styling
+    self.titleLabel.textColor = self.titleColor;
+    self.subtitleLabel.textColor = self.subtitleColor;
+    self.backgroundImageView.backgroundColor = self.backgroundColor;
     
     if (self.enableMotionEffects) {
         // Create and apply the motion effect for the foreground view.
