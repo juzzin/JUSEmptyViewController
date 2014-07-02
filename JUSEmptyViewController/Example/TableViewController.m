@@ -27,17 +27,14 @@
     
     // Create empty view controller
     JUSDefaultEmptyViewController *emptyViewController = [JUSDefaultEmptyViewController new];
+    emptyViewController.title = @"You're out of octopuses!";
+    emptyViewController.subtitle = @"When you follow some blogs, their latest octopuses will show up here!";
+    emptyViewController.actionButtonTitle = @"Get an octopus";
+    emptyViewController.imageName = @"octopus";
     emptyViewController.delegate = self;
     
     // Configure empty view controller
     [self configureEmptyViewController:emptyViewController];
-    
-    // Customize view
-    emptyViewController.titleLabel.text = @"You're out of octopuses!";
-    emptyViewController.subtitleLabel.text = @"When you follow some blogs, their latest octopuses will show up here!";
-    [emptyViewController.actionButton setTitle:@"Get an octopus!" forState:UIControlStateNormal];
-    emptyViewController.imageView.image = [UIImage imageNamed:@"emptyimage2"];
-    emptyViewController.imageView.alpha = 0.5f;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -59,8 +56,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Create activity indicator and position hackishly
-    UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    activityIndicator.color = [UIColor colorWithRed:1.000 green:0.000 blue:0.502 alpha:1.000];
+    UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     activityIndicator.hidesWhenStopped = YES;
     activityIndicator.center = tableView.center;
     [tableView addSubview:activityIndicator];

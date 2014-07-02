@@ -15,10 +15,6 @@
 
 - (void)configureEmptyViewController:(UIViewController *)emptyController
 {
-    // Set frame
-    emptyController.view.frame = self.view.frame;
-    UIView *view = emptyController.view;
-    
     typeof(self) __weak weakSelf = self;
     [[NSNotificationCenter defaultCenter] addObserverForName:JUSReloadDataNotification
                                                       object:nil

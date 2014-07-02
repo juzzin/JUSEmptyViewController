@@ -22,6 +22,7 @@
 		D08DC83E196002BA003EBE75 /* ReloadDataSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = D08DC83D196002BA003EBE75 /* ReloadDataSwizzle.m */; };
 		D08DC842196013A7003EBE75 /* UICollectionView+EmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = D08DC841196013A7003EBE75 /* UICollectionView+EmptyView.m */; };
 		D08DC844196137A5003EBE75 /* JUSDefaultEmptyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D08DC843196137A5003EBE75 /* JUSDefaultEmptyViewController.xib */; };
+		D0E192D01963C80B00F706F2 /* JUSEmptyView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E192CF1963C80B00F706F2 /* JUSEmptyView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,8 @@
 		D08DC840196013A7003EBE75 /* UICollectionView+EmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UICollectionView+EmptyView.h"; path = "UITableCollectionView+EmptyView/UICollectionView+EmptyView.h"; sourceTree = "<group>"; };
 		D08DC841196013A7003EBE75 /* UICollectionView+EmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UICollectionView+EmptyView.m"; path = "UITableCollectionView+EmptyView/UICollectionView+EmptyView.m"; sourceTree = "<group>"; };
 		D08DC843196137A5003EBE75 /* JUSDefaultEmptyViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JUSDefaultEmptyViewController.xib; sourceTree = "<group>"; };
+		D0E192CE1963C80B00F706F2 /* JUSEmptyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JUSEmptyView.h; sourceTree = "<group>"; };
+		D0E192CF1963C80B00F706F2 /* JUSEmptyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JUSEmptyView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +148,8 @@
 		D08DC81F195FE6DE003EBE75 /* Empty View */ = {
 			isa = PBXGroup;
 			children = (
+				D0E192CE1963C80B00F706F2 /* JUSEmptyView.h */,
+				D0E192CF1963C80B00F706F2 /* JUSEmptyView.m */,
 				D08DC822195FE8BF003EBE75 /* JUSDefaultEmptyViewController.h */,
 				D08DC823195FE8BF003EBE75 /* JUSDefaultEmptyViewController.m */,
 				D08DC843196137A5003EBE75 /* JUSDefaultEmptyViewController.xib */,
@@ -270,6 +275,7 @@
 				D08DC842196013A7003EBE75 /* UICollectionView+EmptyView.m in Sources */,
 				D08DC7FF195FE6AE003EBE75 /* AppDelegate.m in Sources */,
 				D08DC82C195FECCF003EBE75 /* TableViewController.m in Sources */,
+				D0E192D01963C80B00F706F2 /* JUSEmptyView.m in Sources */,
 				D08DC836195FFCF5003EBE75 /* UITableView+ReloadData.m in Sources */,
 				D08DC82F195FECD9003EBE75 /* CollectionViewController.m in Sources */,
 				D08DC7FC195FE6AE003EBE75 /* main.m in Sources */,

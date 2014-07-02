@@ -27,17 +27,16 @@
     
     // Create empty view controller
     JUSDefaultEmptyViewController *emptyViewController = [JUSDefaultEmptyViewController new];
+    emptyViewController.title = @"You're out of monkeys.";
+    emptyViewController.subtitle = @"When you follow some blogs, their latest monkeys will show up here!";
+    emptyViewController.actionButtonTitle = @"Get a monkey";
+    emptyViewController.imageName = @"monkey";
+    emptyViewController.backgroundImageName = @"background";
+    emptyViewController.enableMotionEffects = YES;
     emptyViewController.delegate = self;
     
     // Configure empty view controller
     [self configureEmptyViewController:emptyViewController];
-    
-    // Customize view
-    emptyViewController.titleLabel.text = @"You're out of monkeys.";
-    emptyViewController.subtitleLabel.text = @"When you follow some blogs, their latest monkeys will show up here!";
-    [emptyViewController.actionButton setTitle:@"Get monkeys!" forState:UIControlStateNormal];
-    emptyViewController.imageView.image = [UIImage imageNamed:@"emptyimage"];
-    emptyViewController.imageView.alpha = 0.5f;
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
